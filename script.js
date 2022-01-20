@@ -4,16 +4,21 @@ class SkylabArray {
 
   constructor() {
     this.elements = {};
+    this.length = 0;
   }
 
-  pushElement(input) {
-    this.elements[input] = 1;
+  push(input) {
+    this.elements[this.length] = input;
+    this.length += +1;
   }
 }
 
 const superArray = new SkylabArray();
 
-superArray.pushElement("friends");
-superArray.pushElement("cebra");
+superArray.push("friends");
+superArray.push("cebra");
+superArray.push("pls work");
+superArray.push("lapicero");
 
+console.log(superArray.oldLength);
 console.log(superArray);
