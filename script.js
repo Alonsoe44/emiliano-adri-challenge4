@@ -1,15 +1,25 @@
 class SkylabArray {
   elements;
   length;
+  i;
 
   constructor() {
     this.elements = {};
-    this.length = 0;
+    this.i = 0;
+    this.length = -1;
   }
 
   push(input) {
-    this.elements[this.length] = input;
-    this.length += +1;
+    this.elements[this.i] = input;
+    this.length = 0;
+    this.addLenght();
+    this.i += +1;
+  }
+
+  addLenght() {
+    for (const property in this.elements) {
+      this.length += 1;
+    }
   }
 }
 
@@ -20,5 +30,5 @@ superArray.push("cebra");
 superArray.push("pls work");
 superArray.push("lapicero");
 
-console.log(superArray.oldLength);
+console.log(superArray.length);
 console.log(superArray);
